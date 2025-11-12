@@ -1,0 +1,20 @@
+# Example render.yaml (optional) — deploys a Background Worker service on Render
+services:
+  - type: background
+    name: mc-status-bot
+    env: python
+    region: oregon
+    plan: starter
+    repo: your-github-username/your-repo-name  # change this when using render.yaml + GitHub
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: MC_SERVER_HOST
+        value: 23.ip.gl.ply.gg
+      - key: MC_SERVER_PORT
+        value: "12696"
+      - key: MC_PROTOCOL
+        value: bedrock
+    # For secrets, declare them in the Render dashboard and reference them instead of putting tokens in this file
+    # See Render docs: https://render.com/docs/render-yaml
