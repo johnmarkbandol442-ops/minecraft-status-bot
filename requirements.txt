@@ -1,0 +1,5 @@
+# minimal runtime dependencies for the bot
+discord.py>=2.2
+mcstatus>=5.0
+# optional: if you want to load .env locally during development
+python-dotenv>=1.0
